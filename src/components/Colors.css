@@ -1,0 +1,20 @@
+:root {
+  --mainColor: rgb(21, 32, 43, 0.6);
+  --secondaryColor: rgb(25, 39, 52, 0.5);
+
+  --borderColor: rgb(22, 77, 86);
+
+  --themeDotBorder: white;
+
+  --previewBg: rgb(25, 39, 52, 0.5);
+  --previewShadow: rgb(17, 25, 33, 0.6);
+
+  --buttonColor: rgb(23, 162, 184, 0.8);
+}
+
+.cardx {
+  background-color: var(--borderColor);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
