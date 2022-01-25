@@ -87,7 +87,7 @@ function Footer() {
                     borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgba(23, 162, 184, 0.5)",
+                    borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:after": {
                     borderBottomColor: "rgb(23, 162, 184)",
@@ -127,7 +127,7 @@ function Footer() {
                     borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgba(23, 162, 184, 0.5)",
+                    borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:after": {
                     borderBottomColor: "rgb(23, 162, 184)",
@@ -170,7 +170,7 @@ function Footer() {
                     borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgba(23, 162, 184, 0.5)",
+                    borderBottomColor: "rgb(23, 162, 184)",
                   },
                   "& .MuiInput-underline:hover:after": {
                     borderBottomColor: "rgb(23, 162, 184)",

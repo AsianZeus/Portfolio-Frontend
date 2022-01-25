@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState(null);
+
   useEffect(() => {
     FetchData("all").then((response) => {
       setData(response.data);
@@ -43,10 +44,10 @@ function App() {
       <ParticleBackground />
       <div className="App">
         {Personal_Info && <Home data={Personal_Info} />}
-        {Skills && <VariableLengthSkillGrid data={Skills} />}
         {Experiences && <ExperienceTimeline data={Experiences} />}
-        {Education && <EducationTimeline data={Education} />}
         {Projects && <ProjectsCarousel data={Projects} />}
+        {Skills && <VariableLengthSkillGrid data={Skills} />}
+        {Education && <EducationTimeline data={Education} />}
         {Certifications && <CertificationChips data={Certifications} />}
         <Footer />
       </div>

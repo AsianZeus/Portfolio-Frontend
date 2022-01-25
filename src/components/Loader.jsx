@@ -13,7 +13,11 @@ function Loader() {
         alignItems: "center",
       }}
     >
-      <Lottie animationData={LoaderAnimation} style={{ maxWidth: "20rem" }} />
+      <Lottie
+        loop
+        animationData={LoaderAnimation}
+        style={{ maxWidth: "20rem" }}
+      />
     </div>
   );
 }

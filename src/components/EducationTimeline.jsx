@@ -31,7 +31,7 @@ export default function EducationTimeline(props) {
             <TimelineItem
               position={idx % 2 === 0 ? "left" : "right"}
               key={idx}
-              sx={{ maxWidth: "60rem" }}
+              sx={{ maxWidth: "65rem" }}
             >
               <TimelineSeparator>
                 <TimelineConnector />

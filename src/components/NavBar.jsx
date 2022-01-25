@@ -33,6 +33,7 @@ function NavBar(props) {
               ccomponent="div"
               sx={{
                 fontFamily: "Signature",
+                cursor: "default",
               }}
             >
               {props.name}
