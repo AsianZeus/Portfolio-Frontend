@@ -9,6 +9,8 @@ import EducationTimeline from "./EducationTimeline";
 import VariableLengthSkillGrid from "./VariableLengthSkillGrid";
 import ProjectsCarousel from "./ProjectsCarousel";
 import CertificationChips from "./CertificationChips";
+import PublicationChips from "./Publications";
+
 import Loader from "./Loader";
 import { useEffect, useState } from "react";
 
@@ -26,12 +28,14 @@ function App() {
   let Skills = null;
   let Certifications = null;
   let Projects = null;
+  let Publications = null;
   if (data != null) {
     Personal_Info = data.Personal_Info[0];
     Experiences = data.Experiences;
     Education = data.Education;
     Skills = data.Skills;
     Certifications = data.Certifications;
+    Publications = data.Publications;
     Projects = data.Projects;
   }
 
@@ -48,7 +52,9 @@ function App() {
         {Projects && <ProjectsCarousel data={Projects} />}
         {Skills && <VariableLengthSkillGrid data={Skills} />}
         {Education && <EducationTimeline data={Education} />}
+        {Publications && <PublicationChips data={Publications} />}
         {Certifications && <CertificationChips data={Certifications} />}
+        
         <Footer />
       </div>
     </div>

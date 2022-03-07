@@ -16,7 +16,6 @@ export default function ProjectsCarousel(props) {
       id="projects"
       sx={{
         flexGrow: 1,
-        // paddingX: "2rem",
       }}
     >
       <Typography
@@ -28,8 +27,8 @@ export default function ProjectsCarousel(props) {
       </Typography>
       <Box
         style={{
-          paddingLeft: matches ? "4rem" : "2rem",
-          paddingRight: matches ? "4rem" : "2rem",
+          paddingLeft: matches ? "5rem" : "2rem",
+          paddingRight: matches ? "5rem" : "2rem",
           paddingBottom: "0rem",
           paddingTop: "1rem",
         }}

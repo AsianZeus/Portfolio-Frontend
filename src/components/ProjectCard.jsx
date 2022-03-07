@@ -16,10 +16,19 @@ import Divider from "@mui/material/Divider";
 import { Grid } from "@mui/material";
 import { Chip } from "@mui/material";
 import ArtificialIntelligence from "./lottiefiles/ai-animation.json";
-import AceTech from "./lottiefiles/Ace Tech.json";
 import PIRDS from "./lottiefiles/PIRDS.json";
-import Ooze from "./lottiefiles/Ooze Handwritten Text Generation.json";
-import MusicAnalysis from "./lottiefiles/Music Taste Analysis with Spotify.json";
+import Ooze from "./lottiefiles/Ooze.json";
+import Photo3D from "./lottiefiles/3DPhoto.json";
+import AceTech from "./lottiefiles/AceTech.json";
+import Edversity from "./lottiefiles/Edversity.json";
+import FaceEdit from "./lottiefiles/FaceEdit.json";
+import FaceMask from "./lottiefiles/FaceMask.json";
+import ICD10 from "./lottiefiles/ICD10.json";
+import ImageEnhancement from "./lottiefiles/ImageEnhancement.json";
+import Maze from "./lottiefiles/Maze.json";
+import Twilio from "./lottiefiles/Twilio.json";
+import Portfolio from "./lottiefiles/Portfolio.json";
+
 
 const theme = createTheme();
 
@@ -27,12 +36,28 @@ const getJson = (name) => {
   switch (name) {
     case "Ace Tech":
       return AceTech;
-    case "PIRDS":
+    case "Digitalizing Prescription Image":
       return PIRDS;
-    case "Ooze Handwritten Text Generation":
+    case "Ooze - Handwritten Text Generator":
       return Ooze;
-    case "Music Taste Analysis with Spotify":
-      return MusicAnalysis;
+    case "Portfolio":
+      return Portfolio;
+    case "3D-Photography with Image Inpainting and Depth Estimation":
+      return Photo3D;
+    case "Real-Time Call Transcription and Sentimental Analysis":
+      return Twilio;
+    case "FaceMask Classification with SOTA Models":
+      return FaceMask;
+    case "Image Enhancement and Super Resolution":
+      return ImageEnhancement;
+    case "Diverse Facial Edit":
+      return FaceEdit;
+    case "Maze Runner":
+      return Maze;
+    case "Edversity":
+      return Edversity;
+    case "Clinical ICD-10 Code Prediction":
+      return ICD10;
     default:
       return ArtificialIntelligence;
   }
