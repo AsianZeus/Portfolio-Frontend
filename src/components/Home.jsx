@@ -1,5 +1,5 @@
 import "./home.css";
-import { Avatar } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
 import NavBar from "./NavBar";
 import { Icon } from "@iconify/react";
 import "./Fonts.css";
@@ -101,9 +101,12 @@ export default function Home(props) {
                 <div id="corner-tl" className="corner"></div>
                 <div id="corner-tr" className="corner"></div>
                 <h3>Who Am I?</h3>
-                <p style={{ fontFamily: "Montserrat" }}>
+                  <Typography sx={{
+                    fontFamily: "Montserrat",
+                  wordBreak: "break-word"
+                }}>
                   {props.data.Professional_Summary}
-                </p>
+                  </Typography>
                 <div id="corner-br" className="corner"></div>
                 <div id="corner-bl" className="corner"></div>
               </div>

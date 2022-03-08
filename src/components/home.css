@@ -204,27 +204,13 @@
   }
 }
 
-@media screen and (max-width: 385px) {
-  #preview-shadow {
-    max-width: 280px;
-    height: 180px;
-    padding-left: 10px;
-    padding-top: 10px;
-  }
-  #preview {
-    width: 280px;
-  }
-  .s1 {
-    padding: 2.3rem;
-  }
-}
 
 @media screen and (max-width: 370px) {
   #preview-shadow {
     max-width: 240px;
     height: 270px;
     padding-left: 10px;
-    /* padding-top: 10px; */
+    padding-top: 10px;
   }
   #preview {
     width: 230px;

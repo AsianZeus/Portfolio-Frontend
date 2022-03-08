@@ -142,17 +142,18 @@ export default function PublicationChips(props) {
 
               <div
                 style={{
-                  display: "inline-block",
+                  display: "block",
                   backgroundColor: "rgba(255, 255, 255, 0.1)",
                   padding: "10px",
                   marginBottom: "1rem",
                   borderRadius: "3px",
                 }}
               >
-                <Typography>
+                <Typography sx={{
+                  wordBreak: "break-word",
+                }}>
                   {d.Citation}
                 </Typography>
-
               </div>
               <Divider />
               <Accordion
