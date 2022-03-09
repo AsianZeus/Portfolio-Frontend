@@ -2,7 +2,7 @@ import React from "react";
 import "./Main.css";
 import ParticleBackground from "./ParticleBackground";
 import Home from "./Home";
-import FetchData from "./FetchData";
+import axios from "axios";
 import Footer from "./Footer";
 import ExperienceTimeline from "./ExperienceTimeline";
 import EducationTimeline from "./EducationTimeline";
@@ -15,8 +15,13 @@ import Loader from "./Loader";
 
 
 function Main() {
-  
-  const {data,status} = useQuery("info",FetchData);
+
+  const {data,status} = useQuery("info", async () => {
+    const { data } = await axios.get(
+      "https://akshat-surolia-portfolio.herokuapp.com/all"
+    );
+    return data;
+  });
 
   if (status === "loading") {
     return <Loader />;
