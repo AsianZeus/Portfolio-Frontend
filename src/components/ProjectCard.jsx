@@ -1,7 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import { Icon } from "@iconify/react";
-import Lottie from "lottie-react";
 import { Stack } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/material";
@@ -15,6 +14,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import { Grid } from "@mui/material";
 import { Chip } from "@mui/material";
+import Lottie from "lottie-react";
 import ArtificialIntelligence from "./lottiefiles/ai-animation.json";
 import PIRDS from "./lottiefiles/PIRDS.json";
 import Ooze from "./lottiefiles/Ooze.json";

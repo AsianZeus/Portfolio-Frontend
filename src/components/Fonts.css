@@ -1,14 +1,16 @@
 @font-face {
   font-family: "Signature";
-  src: url(fonts/BellisyaSignature.woff2);
+  src: url('../../public/assets/fonts/BellisyaSignature.woff2');
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url(fonts/Montserrat.ttf);
+  src: url("../../public/assets/fonts/Montserrat.ttf");
 }
 
 @font-face {
   font-family: "RussoOne";
-  src: url(fonts/RussoOne.woff2);
+  src: url("../../public/assets/fonts/RussoOne.woff2");
 }
+
+

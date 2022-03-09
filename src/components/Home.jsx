@@ -3,7 +3,6 @@ import { Avatar, Typography } from "@mui/material";
 import NavBar from "./NavBar";
 import { Icon } from "@iconify/react";
 import "./Fonts.css";
-import Resume from "./documents/Akshat_Surolia_Resume.pdf";
 
 export default function Home(props) {
   return (
@@ -75,7 +74,7 @@ export default function Home(props) {
                 </a>
               )}
               <a
-                href={Resume}
+                href={process.env.PUBLIC_URL+ '/documents/Akshat_Surolia_Resume.pdf'}
                 name="resume"
                 download="Akshat_Surolia_Resume.pdf"
               >
