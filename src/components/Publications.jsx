@@ -62,6 +62,7 @@ export default function PublicationChips(props) {
         {props.data.map(function (d, idx) {
           return (
             <div
+              key={idx}
               style={{
                 backgroundColor: "rgb(21, 32, 43, 0.6)",
                 padding: "1rem",

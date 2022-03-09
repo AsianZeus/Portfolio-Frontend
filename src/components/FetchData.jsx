@@ -1,7 +1,6 @@
-import axios from "axios";
+const FetchData = async () => {
+  const res = await fetch('https://akshat-surolia-portfolio.herokuapp.com/all');
+  return res.json();
+};
 
-export default async function FetchData(section) {
-  return await axios.get(
-    `https://akshat-surolia-portfolio.herokuapp.com/${section}`
-  );
-}
+export default FetchData;
