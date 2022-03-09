@@ -1,16 +1,17 @@
 @font-face {
   font-family: "Signature";
   src: url('../../public/assets/fonts/BellisyaSignature.woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
   src: url("../../public/assets/fonts/Montserrat.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RussoOne";
   src: url("../../public/assets/fonts/RussoOne.woff2");
+  font-display: swap;
 }
-
-
