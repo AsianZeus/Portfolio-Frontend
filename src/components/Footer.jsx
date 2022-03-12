@@ -11,9 +11,39 @@ import SendIcon from "@mui/icons-material/Send";
 import FaceIcon from "@mui/icons-material/Face";
 import EmailIcon from "@mui/icons-material/AlternateEmail";
 import MessageIcon from "@mui/icons-material/Message";
+import { useState } from "react";
+import axios from "axios";
+import swal from 'sweetalert2';
+
 function Footer() {
   const themex = useTheme();
   const matches = useMediaQuery(themex.breakpoints.up("sm"));
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleChange = (event) => {
+    console.log(event.target.name);
+    event.target.id === "name"
+      ? setName(event.target.value)
+      : event.target.id === "email"
+        ? setEmail(event.target.value)
+        : event.target.id === "message"
+          ? setMessage(event.target.value)
+          : console.log(event)
+  };
+
+  function sendData(e) {
+    e.preventDefault()
+    const payload = { Name: name, Email: email, Message: message };
+    axios.post('https://akshat-surolia-portfolio.herokuapp.com/requests', payload)
+      .then(response => response.data.created_id ? swal.fire({icon:'success', title: 'Your response has been recorded!', toast:true, iconColor:"rgb(23, 162, 184)", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}): swal.fire({icon:'Error', title:'Something went wrong', toast:true, iconColor:"red", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}));
+
+    setName("");
+    setMessage("");
+    setEmail("");
+  }
 
   return (
     <Box
@@ -66,144 +96,154 @@ function Footer() {
               justifyContent: "center",
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                paddingBottom: "1rem",
-              }}
-            >
-              <FaceIcon sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }} />
-              <TextField
-                id="standard-basic"
-                label="Name"
-                placeholder="Drop your name..."
-                variant="standard"
-                sx={{
-                  "& .MuiInput-underline:before": {
-                    borderBottomColor: "white",
-                  },
-                  "& .MuiInput-underline:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-input": {
-                    color: "white",
-                    fontSize: "1rem",
-                  },
-                  "& label.MuiInputLabel-root": {
-                    color: "white",
-                  },
-                  "& label.Mui-focused": {
-                    color: "rgb(23, 162, 184)",
-                  },
-                }}
-              />
-            </Box>
+            <form action="/" method="POST" onSubmit={sendData}>
 
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                paddingBottom: "1rem",
-              }}
-            >
-              <EmailIcon sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }} />
-              <TextField
-                id="standard-basic"
-                label="Email"
-                placeholder="Drop your email..."
-                variant="standard"
+              <Box
                 sx={{
-                  "& .MuiInput-underline:before": {
-                    borderBottomColor: "white",
-                  },
-                  "& .MuiInput-underline:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-input": {
-                    color: "white",
-                    fontSize: "1rem",
-                  },
-                  "& label.MuiInputLabel-root": {
-                    color: "white",
-                  },
-                  "& label.Mui-focused": {
-                    color: "rgb(23, 162, 184)",
-                  },
+                  display: "flex",
+                  alignItems: "flex-end",
+                  paddingBottom: "1rem",
                 }}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                paddingBottom: "2rem",
-              }}
-            >
-              <MessageIcon
-                sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }}
-              />
-              <TextField
-                id="standard-basic"
-                label="Message"
-                placeholder="Drop your message..."
-                variant="standard"
-                multiline
-                maxRows={3}
+              >
+                <FaceIcon sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }} />
+                <TextField
+                  id="name"
+                  value={name}
+                  label="Name"
+                  onChange={handleChange}
+                  placeholder="Drop your name..."
+                  variant="standard"
+                  sx={{
+                    "& .MuiInput-underline:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:before": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-input": {
+                      color: "white",
+                      fontSize: "1rem",
+                    },
+                    "& label.MuiInputLabel-root": {
+                      color: "white",
+                    },
+                    "& label.Mui-focused": {
+                      color: "rgb(23, 162, 184)",
+                    },
+                  }}
+                />
+              </Box>
+
+              <Box
                 sx={{
-                  "& .MuiInput-underline:before": {
-                    borderBottomColor: "white",
-                  },
-                  "& .MuiInput-underline:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-underline:hover:after": {
-                    borderBottomColor: "rgb(23, 162, 184)",
-                  },
-                  "& .MuiInput-input": {
-                    color: "white",
-                    fontSize: "1rem",
-                  },
-                  "& label.MuiInputLabel-root": {
-                    color: "white",
-                  },
-                  "& label.Mui-focused": {
-                    color: "rgb(23, 162, 184)",
-                  },
+                  display: "flex",
+                  alignItems: "flex-end",
+                  paddingBottom: "1rem",
                 }}
-              />
-            </Box>
-            <Button
-              variant="outlined"
-              startIcon={<SendIcon />}
-              sx={{
-                color: "white",
-                "&:hover": {
-                  backgroundColor: "rgba(23, 162, 184, 0.5)",
+              >
+                <EmailIcon sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }} />
+                <TextField
+                  label="Email"
+                  id="email"
+                  value={email}
+                  onChange={handleChange}
+                  placeholder="Drop your email..."
+                  variant="standard"
+                  sx={{
+                    "& .MuiInput-underline:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:before": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-input": {
+                      color: "white",
+                      fontSize: "1rem",
+                    },
+                    "& label.MuiInputLabel-root": {
+                      color: "white",
+                    },
+                    "& label.Mui-focused": {
+                      color: "rgb(23, 162, 184)",
+                    },
+                  }}
+                />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  paddingBottom: "2rem",
+                }}
+              >
+                <MessageIcon
+                  sx={{ color: "rgb(23, 162, 184)", mr: 1, my: 0.5 }}
+                />
+                <TextField
+                  id="message"
+                  label="Message"
+                  onChange={handleChange}
+                  value={message}
+                  placeholder="Drop your message..."
+                  variant="standard"
+                  multiline
+                  maxRows={3}
+                  sx={{
+                    "& .MuiInput-underline:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:before": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-underline:hover:after": {
+                      borderBottomColor: "rgb(23, 162, 184)",
+                    },
+                    "& .MuiInput-input": {
+                      color: "white",
+                      fontSize: "1rem",
+                    },
+                    "& label.MuiInputLabel-root": {
+                      color: "white",
+                    },
+                    "& label.Mui-focused": {
+                      color: "rgb(23, 162, 184)",
+                    },
+                  }}
+                />
+              </Box>
+              <Button
+                type="submit"
+                variant="outlined"
+                startIcon={<SendIcon />}
+                sx={{
                   color: "white",
-                },
-                "&.MuiButton-outlined": {
-                  borderColor: "white",
-                },
-              }}
-            >
-              Submit
-            </Button>
+                  "&:hover": {
+                    backgroundColor: "rgba(23, 162, 184, 0.5)",
+                    color: "white",
+                  },
+                  "&.MuiButton-outlined": {
+                    borderColor: "white",
+                  },
+                }}
+              >
+                Submit
+              </Button>
+            </form>
           </div>
         </Box>
       </Stack>
