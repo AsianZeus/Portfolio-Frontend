@@ -8,7 +8,7 @@ function App() {
       <div className="App">
         <QueryClientProvider client={queryClient}>
           <Main />
-          {console.log(process.env.SECRET_KEY)}
+          {console.log(process.env.REACT_APP_SECRET_KEY)}
           </QueryClientProvider>
       </div>
   );
