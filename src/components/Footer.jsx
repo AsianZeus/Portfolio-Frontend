@@ -37,7 +37,11 @@ function Footer() {
   function sendData(e) {
     e.preventDefault()
     const payload = { Name: name, Email: email, Message: message };
-    axios.post('https://akshat-surolia-portfolio.herokuapp.com/requests', payload)
+    axios.post('https://akshat-surolia-portfolio.herokuapp.com/requests', payload, {
+      headers: {
+        key: process.env.REACT_APP_SECRET_KEY,
+      }
+    })
       .then(response => response.data.created_id ? swal.fire({icon:'success', title: 'Your response has been recorded!', toast:true, iconColor:"rgb(23, 162, 184)", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}): swal.fire({icon:'Error', title:'Something went wrong', toast:true, iconColor:"red", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}));
 
     setName("");

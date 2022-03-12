@@ -17,8 +17,14 @@ import Loader from "./Loader";
 function Main() {
 
   const {data,status} = useQuery("info", async () => {
+
     const { data } = await axios.get(
-      "https://akshat-surolia-portfolio.herokuapp.com/all"
+      "https://akshat-surolia-portfolio.herokuapp.com/all",
+      {
+        headers: {
+          key: process.env.REACT_APP_SECRET_KEY,
+        }
+      }
     );
     return data;
   });
