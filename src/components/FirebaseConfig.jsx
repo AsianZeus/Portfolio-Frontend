@@ -3,14 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA0LLtYydZ7Td6V-O9n1v20VllaCpPQI0o",
-  authDomain: "portfolio-database-e5ef6.firebaseapp.com",
-  databaseURL: "https://portfolio-database-e5ef6-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "portfolio-database-e5ef6",
-  storageBucket: "portfolio-database-e5ef6.appspot.com",
-  messagingSenderId: "37794729593",
-  appId: "1:37794729593:web:53685ef5a5ecde57550ea8",
-  measurementId: "G-5SPPEB94GD"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.DATABASE_URL,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 // Initialize Firebase

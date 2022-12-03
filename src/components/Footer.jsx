@@ -13,7 +13,7 @@ import EmailIcon from "@mui/icons-material/AlternateEmail";
 import MessageIcon from "@mui/icons-material/Message";
 import { useState } from "react";
 import swal from 'sweetalert2';
-import {ref, set} from "firebase/database";
+import {ref, update} from "firebase/database";
 import db from './FirebaseConfig';
 
 
@@ -46,7 +46,7 @@ function Footer() {
       },
     };
     const dbRef = ref(db, 'Contact_Us');
-    set(dbRef, payload).then(() => {
+    update(dbRef, payload).then(() => {
       swal.fire({
         title: 'Success!',
         text: 'Your message has been sent!',
