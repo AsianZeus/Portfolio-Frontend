@@ -12,8 +12,10 @@ import FaceIcon from "@mui/icons-material/Face";
 import EmailIcon from "@mui/icons-material/AlternateEmail";
 import MessageIcon from "@mui/icons-material/Message";
 import { useState } from "react";
-import axios from "axios";
 import swal from 'sweetalert2';
+import {ref, set} from "firebase/database";
+import db from './FirebaseConfig';
+
 
 function Footer() {
   const themex = useTheme();
@@ -36,17 +38,33 @@ function Footer() {
 
   function sendData(e) {
     e.preventDefault()
-    const payload = { Name: name, Email: email, Message: message };
-    axios.post('https://akshat-surolia-portfolio.herokuapp.com/requests', payload, {
-      headers: {
-        key: process.env.REACT_APP_SECRET_KEY,
-      }
-    })
-      .then(response => response.data.created_id ? swal.fire({icon:'success', title: 'Your response has been recorded!', toast:true, iconColor:"rgb(23, 162, 184)", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}): swal.fire({icon:'Error', title:'Something went wrong', toast:true, iconColor:"red", background:"rgb(17, 26, 34, 0.9)", color:"white", confirmButtonColor:"rgb(23, 162, 184)"}));
-
-    setName("");
-    setMessage("");
-    setEmail("");
+    const payload = {
+      [Date().toLocaleString()]: {
+        name: name,
+        email: email,
+        message: message,
+      },
+    };
+    const dbRef = ref(db, 'Contact_Us');
+    set(dbRef, payload).then(() => {
+      swal.fire({
+        title: 'Success!',
+        text: 'Your message has been sent!',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+      setName("");
+      setMessage("");
+      setEmail("");
+    
+    }).catch((error) => {
+      swal.fire({
+        title: 'Error!',
+        text: 'Your message could not be sent!',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+    });
   }
 
   return (
