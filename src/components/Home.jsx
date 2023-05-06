@@ -74,7 +74,8 @@ export default function Home(props) {
                 </a>
               )}
               <a
-                href={process.env.PUBLIC_URL+ '/documents/Akshat_Surolia_Resume.pdf'}
+                // href={process.env.PUBLIC_URL+'/documents/Akshat_Surolia_Resume.pdf'}
+                href={'assets/documents/Akshat_Surolia_Resume.pdf'}
                 name="resume"
                 download="Akshat_Surolia_Resume.pdf"
               >
