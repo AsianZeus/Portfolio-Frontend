@@ -198,25 +198,6 @@ export default function Card(props) {
             {props.description}
           </Typography>
 
-          <Divider
-            textAlign="right"
-            sx={{
-              "&.MuiDivider-root": {
-                "&::before": {
-                  borderTop: (theme) => `thin solid white`,
-                },
-              },
-            }}
-            style={{
-              marginTop: "0.5rem",
-              marginBottom: "1rem",
-              color: "white",
-            }}
-          // variant="middle"
-          >
-            Expertise
-          </Divider>
-          <LinearWithValueLabel value={props.expertise} />
         </AccordionDetails>
       </Accordion>
     </Box>
