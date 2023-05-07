@@ -23,8 +23,20 @@ const IconDict = {
   JavaScript: (
     <Icon icon="logos:javascript" inline style={{ paddingRight: "0.5rem" }} />
   ),
+  Docker: (
+    <Icon icon="logos:docker-icon" inline style={{ paddingRight: "0.5rem" }} />
+  ),
+  Kubernetes: (
+    <Icon icon="logos:kubernetes" inline style={{ paddingRight: "0.5rem" }} />
+  ),
+  Redis: (
+    <Icon icon="logos:redis" inline style={{ paddingRight: "0.5rem" }} />
+  ),
   PyTorch: (
-    <Icon icon="logos:pytorch" inline style={{ paddingRight: "0.5rem" }} />
+    <Icon icon="logos:pytorch-icon" inline style={{ paddingRight: "0.5rem" }} />
+  ),
+  HuggingFace: (
+    <Icon icon="fluent-emoji-flat:hugging-face" inline style={{ paddingRight: "0.5rem" }} />
   ),
   React: <Icon icon="logos:react" inline style={{ paddingRight: "0.5rem" }} />,
   TensorFlow: (
@@ -200,7 +212,7 @@ export default function Card(props) {
               marginBottom: "1rem",
               color: "white",
             }}
-            // variant="middle"
+          // variant="middle"
           >
             Expertise
           </Divider>

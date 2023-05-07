@@ -92,6 +92,7 @@ export default function PublicationChips(props) {
                   <Typography
                     variant="h6"
                     gutterBottom
+                    noWrap
                     align="left">
                     {d.Title}
                   </Typography>
