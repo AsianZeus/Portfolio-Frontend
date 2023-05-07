@@ -89,8 +89,11 @@ export default function PublicationChips(props) {
                 />
 
                 <Stack direction="column" spacing={0}>
-                  <Typography variant="h6" gutterBottom noWrap align="left">
-                    {d.Title.length > 20 ? `${d.Title.slice(0, 20)}...` : d.Title}
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    align="left">
+                    {d.Title}
                   </Typography>
                   <Typography
                     variant="subtitle2"
@@ -100,44 +103,43 @@ export default function PublicationChips(props) {
                 </Stack>
 
               </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-between"
-                }}>
-                <Typography
-                  variant="subtitle1"
-                  sx={{ fontFamily: "RussoOne" }}
-                >
-                  How to cite
-                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between"}}>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontFamily: "RussoOne"}}
+                  >
+                    How to cite
+                  </Typography>
+                
+                      <Tooltip key={idx} title={"Published by " + d.Publishing_Journal} >
+                        <Chip
+                          component="a"
+                          href={d.Publishing_URL}
+                          clickable
 
-                <Tooltip key={idx} title={"Published by " + d.Publishing_Journal} >
-                  <Chip
-                    component="a"
-                    href={d.Publishing_URL}
-                    clickable
-
-                    icon={<Icon
-                      icon="ooui:journal-ltr"
-                      inline
-                      style={{ paddingRight: "0.5rem", color: "#1769aa" }}
-                    />}
-                    label={<Typography noWrap>See Publication</Typography>}
-                    style={{
-                      maxWidth: "100%",
-                      marginRight: "0.5rem",
-                      marginTop: "0.5rem",
-                      marginBottom: "0.5rem",
-                      padding: "0.5rem",
-                      color: "white",
-                      backgroundColor: "rgb(25, 39, 52, 0.5)",
-                    }}
-                  />
-                </Tooltip>
-              </Box>
+                          icon={<Icon
+                            icon="ooui:journal-ltr"
+                            inline
+                            style={{ paddingRight: "0.5rem", color: "#1769aa" }}
+                          />}
+                          label={<Typography noWrap>See Publication</Typography>}
+                          style={{
+                            maxWidth: "100%",
+                            marginRight: "0.5rem",
+                            marginTop: "0.5rem",
+                            marginBottom: "0.5rem",
+                            padding: "0.5rem",
+                            color: "white",
+                            backgroundColor: "rgb(25, 39, 52, 0.5)",
+                          }}
+                        />
+                      </Tooltip>
+                </Box>
 
               <div
                 style={{
