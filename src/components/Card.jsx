@@ -5,8 +5,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Icon } from "@iconify/react";
-import Divider from "@mui/material/Divider";
-import LinearWithValueLabel from "./Slider";
 import "./Colors.css";
 import Box from "@mui/material/Box";
 
