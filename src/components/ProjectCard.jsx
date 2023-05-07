@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import { Icon } from "@iconify/react";
 import { Stack } from "@mui/material";
@@ -28,7 +28,6 @@ import ImageEnhancement from "./lottiefiles/ImageEnhancement.json";
 import Maze from "./lottiefiles/Maze.json";
 import Twilio from "./lottiefiles/Twilio.json";
 import Portfolio from "./lottiefiles/Portfolio.json";
-
 
 const theme = createTheme();
 

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./home.css";
 import { Avatar, Typography } from "@mui/material";
 import NavBar from "./NavBar";
@@ -5,6 +6,13 @@ import { Icon } from "@iconify/react";
 import "./Fonts.css";
 
 export default function Home(props) {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = props.data.Profile_Picture_URL;
+    document.head.appendChild(link);
+  }, [props.data.Profile_Picture_URL]);
   return (
     <div
       style={{
@@ -74,19 +82,12 @@ export default function Home(props) {
                 </a>
               )}
               <a
-                // href={process.env.PUBLIC_URL+'/documents/Akshat_Surolia_Resume.pdf'}
                 href={'assets/documents/Akshat_Surolia_Resume.pdf'}
                 name="resume"
                 download="Akshat_Surolia_Resume.pdf"
               >
                 <Icon icon="bi:file-earmark-pdf-fill" color="white" />
               </a>
-
-              {/* {props.data.Social && (
-                <a name="instagram" href={props.data.Social.Instagram}>
-                  <Icon icon="cib:instagram" color="#bc2a8d" />
-                </a>
-              )} */}
               {props.data.Social && (
                 <a name="spotify" href={props.data.Social.Spotify}>
                   <Icon icon="logos:spotify-icon" />
